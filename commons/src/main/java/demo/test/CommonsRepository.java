@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class CommonsRepository {
     public String test() {
-        return "test";
+        return "Hello world!";
     }
 }
