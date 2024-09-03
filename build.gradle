@@ -10,7 +10,7 @@ repositories {
 
 bootJar.enabled = false
 
-
+// 모듈 프로젝트 설정
 subprojects {
 	group = 'com.example'
 	version = '0.0.1-SNAPSHOT'
@@ -47,17 +47,24 @@ subprojects {
 		useJUnitPlatform()
 	}
 }
+/**
+ * commons 프로젝트 설정
+ */
 
 project(':commons') {
 	bootJar{enabled = false}
 	jar{enabled = true}
 }
 
+/**
+ * api 프로젝트 설정
+ */
 project(':api') {
 	bootJar{enabled = true}
 	jar{enabled = false}
 
 	dependencies {
+		//의존성 주입
 		implementation project(':commons')
 		implementation 'org.springframework.boot:spring-boot-starter-web'
 	}
